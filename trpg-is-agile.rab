@@ -1,0 +1,262 @@
+= ((*エンジニアがTRPGをやるべき理由*))
+
+:subtitle
+  〜隣り合わせの遊びと技術〜
+: author
+   ぱろっと(@parrot_studio)
+: content-source
+   Gunma.web #12
+: date
+   2013/02/09
+:theme
+  theme-gunmaweb12
+
+= Profile
+
+* ぱろっと（(('tag:small:T.Tachiki'))）
+* @parrot_studio
+* parrot-studio.com
+* プログラマっぽい何か
+* ((*（元）TRPGゲーマー*))
+  * 群馬でイベントをやっていたことも
+
+= TRPGってなに？
+
+  # blockquote
+  # title = テーブルトークRPG - Wikipedia
+  紙や鉛筆、サイコロなどの道具を用いて、人間同士の会話とルールブックに記載されたルールに従って遊ぶ“対話型”のロールプレイングゲーム
+
+(('note:日本ではコンピュータRPGが先行したためTRPGと呼ぶが、アメリカではこれが「RPG」'))
+
+= "テーブルトーク"RPG
+
+  # image
+  # src = RPG-2009-Berlin-2.jpg
+  # relative_width = 40
+
+ゲームマスター（GM）とプレイヤー数人が一つの((*テーブル*))を囲み、((*「会話」*))しながら進める
+
+= 以上をふまえて、\n今日言いたいこと
+
+= ((*"TRPG"*))\nis\n((*Agile!!*))
+
+= "TRPG" is Agile!!
+
+* ((*人と人*))が
+* ((*共通の目標*))に対して
+* ((*それぞれが楽しく*))なるように
+* ((*臨機応変*))に
+* ((*コミュニケーション*))するゲーム
+
+#= ((*ゲームマスター*))とは？
+#
+#* プレイヤー（顧客）と向き合うもの
+#* プレイヤーにストーリー（仕様）を提示するもの
+#* NPCや時間（リソース）、ストーリー進行をマネージメントするもの
+
+#= ((*プレイヤー*))とは？
+#
+#* GM（顧客）と共にストーリー（仕様）を組み上げる（開発する）もの
+#* ストーリー上の障害を解決するためのチーム
+#* GMや他のプレイヤーにアイデアを提案するもの
+
+= TRPGのここがすごい！
+
+技術書を読んでもなかなか身につかない((*"非技術的スキル"*))が、\nTRPGなら((*遊びながら自然と*))身につくよ！(`･ω･´)
+
+= 以下、実例を挙げていくよ！
+
+= ※絶対に5分で終わらないので((*必ず途中で止めて*))ください\nΣ(・ω・ノ)ノ
+
+= Case1 : ((*論理構成力*))
+
+* GMが破綻しないシナリオを書くために必須
+* NPCや他のプレイヤーを説得したりするのに重要
+
+= Scene1
+
+* GM：（今回は依頼人がこいつで・・・目的は○○で・・・でも実は××だから、伏線はこんな感じにして・・・）
+
+== プロパティ
+
+: background-image
+  dice.png
+: background-image-relative-width
+  20
+: background-image-align
+  right
+: background-image-vertical-align
+  bottom
+: background-image-relative-margin-top
+  70
+
+= Case2 : ((*コミュニケーション能力/表現力*))
+
+* 状況は言葉（と簡単な絵や図）でしか伝えられない
+* 「相手にわかるように」状況や行動を伝える必要がある
+* 相手の発言の意味や意図を理解するのも重要
+
+= Scene2 (Bad Case)
+
+* GM：君たちはゲフェンの街に着いた。どうする？
+* プレイヤーC：(('tag:x-small:（いや、どうすると言われても・・・）'))今何時くらい？
+* GM：夕方だね
+* プレイヤーD：ふーむ・・・じゃあ、酒場でも探してみるか
+
+= Scene2 (Better Case)
+
+* GM：(('tag:x-small:君たちは数日歩き続け、やっとゲフェンの街に着いた。魔法の研究が盛んな都市で、街の中央には大きな塔が立っている。時刻は夕暮れで、家路を急ぐ人が多い中、近くの酒場からはおいしそうな匂いが漂ってくる'))
+* プレイヤーC：OK、久々にうまいものを食おう。店に入るよ
+* プレイヤーD：「マスター、エールと今日のおすすめ！」
+
+= このままだと((*ネタ*))だけで終わりそうなので・・・
+
+= TRPGは((*さいころ*))を良く使う
+
+* 一般的なさいころ＝6面体
+* 6面体を2個振る \\n-> ((*「2D6」*))と表記
+
+== プロパティ
+
+: background-image
+  Dungeons_and_Dragons_game.jpg
+: background-image-relative-width
+  45
+: background-image-align
+  right
+: background-image-vertical-align
+  bottom
+: background-image-relative-margin-top
+  50
+
+= ((*「2D6」*))って書けると、きっと嬉しいよね(´･ω･)？
+
+= gem install ((*pinzoro*))
+
+= gem ((*"Pinzoro"*))
+
+  require 'pinzoro'
+  2.d6  #=> [2, 3]
+  2.d6! #=> 8
+  2.D6  #=> [6, 1]
+  2.D6! #=> 11
+
+(('tag:right'))(('note:https://github.com/parrot-studio/pinzoro'))
+
+= 以下、止められるまで続きを\n(´･ω･)っ
+
+= Case3 : ((*アドリブ力 / 臨機応変な対応力*))
+
+* プレイヤーがどう動くかは事前にわからない
+* 推測することはできるが、結局その場で考えるしかない
+* 「その場で考えるための材料」を用意しておこう、と逆に考えるようになる
+
+= Scene3
+
+* プレイヤーA：よし、そういうことなら××の街へ行こう！
+* GM：(('tag:x-small:（え、そんな場所に行かれると破綻するな・・・ちょっと登場予定を早めるか）'))\nそんな相談をしていると、君たちに声をかける女性が
+
+== プロパティ
+
+: background-image
+  dice.png
+: background-image-relative-width
+  20
+: background-image-align
+  right
+: background-image-vertical-align
+  bottom
+: background-image-relative-margin-top
+  70
+
+#= Case4 : ((*大人の対応力*))
+#
+#* TRPGは勝負ではなく、皆でお話を織り上げていくもの
+#* ひとりよがり（・Ａ・）ｲｸﾅｲ!!
+
+#= Scene4
+#
+#* プレイヤーB：俺、魔法使いだし、アカデミーの学長と知り合いでいい？
+#* GM：いや、さすがにそれは無茶だよ。\nどうしてもっていうなら何か理由付けして\n(('tag:x-small:（それでも認めないけど・・・）'))
+
+#== プロパティ
+#
+#: background-image
+#  dice.png
+#: background-image-relative-width
+#  20
+#: background-image-align
+#  right
+#: background-image-vertical-align
+#  bottom
+#: background-image-relative-margin-top
+#  70
+
+= Case4 : ((*リソース管理*))
+
+* どうしてもプレイは長くなりがち
+  * 特にイベント等でプレイする場合は終了時間厳守
+* 思い切ってシナリオの枝葉を端折るのも重要
+
+= Scene4
+
+* GM：（プレイヤーが街で遊びすぎたので時間が足りないな・・・ダンジョンを一フロア飛ばすか。せっかくの華麗なトラップが無駄になるけども）
+
+== プロパティ
+
+: background-image
+  dice.png
+: background-image-relative-width
+  20
+: background-image-align
+  right
+: background-image-vertical-align
+  bottom
+: background-image-relative-margin-top
+  70
+
+#= Case5 : ((*決断力 / 調整力*))
+#
+#* NPC（＝GM）との交渉
+#* リーダーとしてPTの意見をまとめる
+
+#= Scene5
+#
+#* プレイヤーB：俺は右が怪しいと見たね
+#* プレイヤーC：いや、左だと思う
+#* GM：（ニヤニヤ）
+#* プレイヤーA（リーダー）：(('tag:x-small:（どっちもどっちだな・・・）'))じゃあ、まずは左で
+
+= Case5 : ((*合理的かつ公平な判断力*))
+
+* お互いに納得できる判定方法の提示
+* GMだけが、プレイヤーだけが\\n(ﾟдﾟ)ｳﾏｰするのは違う
+* 「ルール」だけが絶対ではない
+
+= Scene5-1
+
+* （ラスボス「黒の剣士」との戦闘中、プレイヤーEのターン）
+* プレイヤーE：例の人物の名前を出して動揺させてみる。\n「彼女はこんなことを望んでいない！なぜわからない！！」
+
+== プロパティ
+
+: background-image
+  dice.png
+: background-image-relative-width
+  20
+: background-image-align
+  right
+: background-image-vertical-align
+  bottom
+: background-image-relative-margin-top
+  70
+
+= Scene5-2
+
+* GM：(('tag:x-small:（なるほど、そうきたか。せっかくなので生かしてあげよう）'))\n"黒の剣士「うるさい、貴様らに何がわかる！」"\n彼は明らかに動揺しているね。このターンだけ攻撃ロールに-1のペナルティをつけてあげよう
+
+= 最後に繰り返しますが
+
+= ((*"TRPG"*))\nis\n((*Agile!!*))
+
+= あー((*TRPG*))やりたい\nщ(ﾟДﾟщ)
